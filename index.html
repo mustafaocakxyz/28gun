@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Website</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      background-color: black;
+      padding: 0;
+      font-family: 'Sora', sans-serif;
+      background-image: url('https://raw.githubusercontent.com/abdunzelil/tekrarDenemeUcretsizPDF/refs/heads/main/orek.png');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden; /* Prevent scrolling */
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+      width: 90%; /* Cover most of the page width */
+      max-width: 1200px; /* Limit maximum width */
+      margin: 0 auto;
+    }
+
+    .ebook-cover {
+      width: 40%; /* Adjust as needed */
+      max-width: 400px; /* Limit maximum size */
+      height: auto;
+      margin-right: 5%; /* Space between image and text */
+    }
+
+    .content {
+      flex: 1;
+      text-align: left;
+      margin-left: 5%;
+    }
+
+    h1 {
+      font-size: 4vw; /* Responsive font size based on viewport width */
+      margin: 0 0 20px 0;
+      color: white;
+    }
+
+    .download-button {
+      background: linear-gradient(90deg, #1e90ff, #00bfff); /* Gradient blue */
+      color: white;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 25px; /* Rounded corners */
+      font-size: 2vw; /* Responsive font size */
+      cursor: pointer;
+      transition: background 0.3s ease;
+      text-decoration: none; /* Remove underline from link */
+      display: inline-block; /* Make the link behave like a button */
+    }
+
+    .download-button:hover {
+      background: linear-gradient(90deg, #00bfff, #1e90ff); /* Reverse gradient on hover */
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .ebook-cover {
+        width: 50%; /* Adjust for smaller screens */
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+
+      h1 {
+        font-size: 8vw; /* Larger font size for smaller screens */
+      }
+
+      .download-button {
+        font-size: 4vw; /* Larger button text for smaller screens */
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="https://imagekit.io/tools/asset-public-link?detail=%7B%22name%22%3A%22kapak.jpg%22%2C%22type%22%3A%22image%2Fjpeg%22%2C%22signedurl_expire%22%3A%222028-02-13T20%3A33%3A09.933Z%22%2C%22signedUrl%22%3A%22https%3A%2F%2Fmedia-hosting.imagekit.io%2F%2Fb3a66b3b40424dc2%2Fkapak.jpg%3FExpires%3D1834086790%26Key-Pair-Id%3DK2ZIVPTIP2VGHC%26Signature%3DrXYxWr9LCWUxtLSoT0xzm6xI6-BPw7UPdO4nHNe~NcPWZbAwcKF0Gfs0-6VCIK7ZeBqdng4POEuKHu1nhuXik3hGGPD8iFEcyuKywrwVijFsBEuxlGk6scL3~wOc5d2D~MKl-I-y4ndnEptFKf~DCgy1cZ8IJyX6vGw3xv0Gkq4jXOHXLU0aWN1E929x53W7vMYk1A238W8U1vhciJphMQl36NJG2heV3BdMwfJIXro1iOt4JC8aR5wjU8U4xvhnARo7d~L5zcyPU1xf4fKU-sspjm5HEpgMDD79SvUb37rOE1M5AAm8JNwvep-T5G7L5pzMSWRoduiWnlMF9W4VDA__%22%7D" alt="e-Book Cover" class="ebook-cover"> <!-- Add your e-Book cover image link -->
+    <div class="content">
+      <h1>28 Günde Karlı Bir Sosyal Medya Girişimi Kurmayı Öğren</h1>
+      <a href="https://drive.google.com/file/d/1_rmF9LYCkAxTk_MhPLXJrgrxD7Vw42Zb/view?usp=sharing" class="download-button">Ücretsiz PDF İndir</a>
+    </div>
+  </div>
+</body>
+</html>
