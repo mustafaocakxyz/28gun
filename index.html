@@ -42,9 +42,14 @@
       width: 65%; /* Adjust as needed */
       max-width: 500px; /* Limit maximum size */
       height: auto;
+      transition: 0.3s ease;
       margin-right: 5%; /* Space between image and text */
     }
 
+    .ebook-cover:hover {
+      transform: scale(1.1);
+    }
+    
     .content {
       flex: 1;
       text-align: left;
@@ -76,6 +81,7 @@
 
     .download-button:hover {
       background: linear-gradient(90deg, #00bfff, #1e90ff); /* Reverse gradient on hover */
+      transform: scale(1.1);
     }
 
     @media (max-width: 768px) {
