@@ -2,14 +2,13 @@
 <html lang="en">
 <head>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-84RV9DG8RB"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-84RV9DG8RB');
-</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-84RV9DG8RB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-84RV9DG8RB');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ücretsiz e-Kitap</title>
@@ -27,57 +26,55 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: hidden; /* Prevent scrolling */
+      overflow: hidden;
     }
 
     .container {
       display: flex;
       align-items: center;
-      width: 90%; /* Cover most of the page width */
-      max-width: 1200px; /* Limit maximum width */
+      width: 90%;
+      max-width: 1200px;
       margin: 0 auto;
     }
 
     .ebook-cover {
-      width: 65%; 
-      max-width: 500px; /* Limit maximum size */
+      width: 65%;
+      max-width: 500px;
       height: auto;
-      transition: 0.3s ease;
-      margin-right: 5%; /* Space between image and text */
+      margin-right: 5%;
+      border-radius: 5%;
+      opacity: 0;
+      transform: translateX(-100%);
+      transition: transform 1s ease-out, opacity 1s ease-out;
     }
 
-    .ebook-cover:hover {
-      transform: scale(1.1);
-    }
-    
     .content {
       flex: 1;
       text-align: left;
       margin-left: 5%;
+      opacity: 0;
     }
 
     h1 {
-      font-size: 4vw; /* Responsive font size based on viewport width */
+      font-size: 4vw;
       margin: 0 0 20px 0;
       color: white;
     }
 
     .download-button {
-      background: linear-gradient(90deg, #1e90ff, #00bfff); /* Gradient blue */
+      background: linear-gradient(90deg, #1e90ff, #00bfff);
       color: white;
       padding: 15px 30px;
       border: none;
-      border-radius: 25px; /* Rounded corners */
-      font-size: 2vw; /* Responsive font size */
+      border-radius: 25px;
+      font-size: 2vw;
       cursor: pointer;
-      transition: 0.3s ease;
-      text-decoration: none; /* Remove underline from link */
-      display: inline-block; /* Make the link behave like a button */
+      text-decoration: none;
+      display: inline-block;
+      opacity: 0;
+      transform: scale(0.5);
+      transition: transform 0.5s ease-out, opacity 0.5s ease-out;
     }
-
-    .ebook-cover {
-        border-radius: 5%
-      }
 
     .download-button:hover {
       transform: scale(1.1);
@@ -90,29 +87,59 @@
       }
 
       .ebook-cover {
-        width: 80%; /* Adjust for smaller screens */
+        width: 80%;
         margin-right: 0;
         margin-bottom: 20px;
-        corner-radius: 20%
       }
 
       h1 {
-        font-size: 8vw; /* Larger font size for smaller screens */
+        font-size: 8vw;
       }
 
       .download-button {
-        font-size: 4vw; /* Larger button text for smaller screens */
+        font-size: 4vw;
       }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/473289275_504947818937095_424897229375885400_n.jpg?stp=dst-jpg_p2048x2048_tt6&_nc_cat=111&ccb=1-7&_nc_sid=0024fc&_nc_ohc=VigtlY7zhD8Q7kNvgHfozVp&_nc_oc=AdidNooIUIso1m1wUzxg7nJmVe9SdhcRVfltKWGjuj4NkoK9y-Gvw-2XsrLU2wsTlfOYf3W4C9kL2ioINF3ZjH6x&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&oh=03_Q7cD1gHEk6IvnpFhEh1iZht6bF8taX3aHHaF2NPTt93w-doDVA&oe=67D6DBF7" alt="e-Book Cover" class="ebook-cover"> <!-- Add your e-Book cover image link -->
+    <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/473289275_504947818937095_424897229375885400_n.jpg" 
+         alt="e-Book Cover" class="ebook-cover">
     <div class="content">
-      <h1>28 Günde Karlı Bir Sosyal Medya Girişimi Kurmayı Öğren</h1>
-      <a href="https://drive.google.com/file/d/1UrcZixk3gxkNNXAZe-tVXX7Q8aHAs6qs/view?usp=sharing" class="download-button">Ücretsiz PDF İndir</a>
+      <h1 id="animated-text"></h1>
+      <a href="https://drive.google.com/file/d/1UrcZixk3gxkNNXAZe-tVXX7Q8aHAs6qs/view?usp=sharing" 
+         class="download-button">Ücretsiz PDF İndir</a>
     </div>
   </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const ebookCover = document.querySelector(".ebook-cover");
+      const textElement = document.getElementById("animated-text");
+      const button = document.querySelector(".download-button");
+      const text = "28 Günde Karlı Bir Sosyal Medya Girişimi Kurmayı Öğren";
+      let index = 0;
+
+      // Animate e-Book Cover
+      ebookCover.style.opacity = "1";
+      ebookCover.style.transform = "translateX(0)";
+      
+      // Animate text word by word
+      function typeText() {
+        if (index < text.length) {
+          textElement.innerHTML += text[index];
+          index++;
+          setTimeout(typeText, 50); // Adjust speed here
+        } else {
+          // Show button after text animation
+          button.style.opacity = "1";
+          button.style.transform = "scale(1)";
+        }
+      }
+
+      setTimeout(typeText, 1200); // Delay before starting text animation
+    });
+  </script>
 </body>
 </html>
